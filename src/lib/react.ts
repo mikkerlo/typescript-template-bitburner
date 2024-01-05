@@ -1,8 +1,9 @@
 import ReactNamespace from 'react/index';
 import ReactDomNamespace from 'react-dom';
 
-const React = window.React as typeof ReactNamespace;
-const ReactDOM = window.ReactDOM as typeof ReactDomNamespace;
+const wnd: Window & typeof globalThis = eval("window");
+const React = wnd.React as typeof ReactNamespace;
+const ReactDOM = wnd.ReactDOM as typeof ReactDomNamespace;
 
 export default React;
 export {
